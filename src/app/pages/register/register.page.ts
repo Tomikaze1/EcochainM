@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,11 +14,21 @@ export class RegisterPage {
   password = '';
   confirmPassword = '';
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(private router: Router) {}
 
-  async register() {
-    if (!this.email || !this.password || !this.confirmPassword) {
-      alert('Please fill in all fields');
+  register() {
+    if (!this.email || !this.password || !this.confirmPassword || !this.name || !this.phone) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    if (!this.email.includes('@') || !this.email.includes('.')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    if (this.password.length < 6) {
+      alert('Password should be at least 6 characters.');
       return;
     }
 
@@ -28,15 +37,24 @@ export class RegisterPage {
       return;
     }
 
-    try {
-      const result = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
-      // Optional: Save name/phone to Firestore later
-      alert('Registration successful!');
-      this.router.navigate(['/dashboard']);
-    } catch (error: unknown) {
-      const err = error as Error;
-      alert('Registration failed: ' + err.message);
+    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+
+    const userExists = storedUsers.some((u: any) => u.email === this.email);
+    if (userExists) {
+      alert('This email is already registered.');
+      return;
     }
+
+    storedUsers.push({
+      name: this.name,
+      email: this.email,
+      phone: this.phone,
+      password: this.password
+    });
+
+    localStorage.setItem('users', JSON.stringify(storedUsers));
+    alert('Registration successful!');
+    this.router.navigate(['/login']);
   }
 
   goToLogin() {

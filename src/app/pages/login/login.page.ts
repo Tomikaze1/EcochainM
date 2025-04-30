@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,15 +12,17 @@ export class LoginPage {
   password = '';
   rememberMe = false;
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(private router: Router) {}
 
-  async login() {
-    try {
-      await this.afAuth.signInWithEmailAndPassword(this.email, this.password);
-      this.router.navigate(['/dashboard']); // or homepage
-    } catch (error: unknown) {
-      const err = error as Error;
-      alert('Login failed: ' + err.message);
+  login() {
+    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+    const match = storedUsers.find((u: any) => u.email === this.email && u.password === this.password);
+
+    if (match) {
+      alert('Login successful!');
+      this.router.navigate(['/dashboard']);
+    } else {
+      alert('Login failed: Incorrect email or password.');
     }
   }
 
