@@ -1,0 +1,7 @@
+{
+  "name": "ecochain-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
