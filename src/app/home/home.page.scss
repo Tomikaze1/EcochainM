@@ -2,29 +2,42 @@
   background: linear-gradient(to bottom right, #d0f0c0, #f0fff0);
 }
 
-.logo {
-  margin-top: 10vh;
+.home-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8vh;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
 }
 
 .logo-img {
-  width: 150px;
-  height: auto;
+  width: 180px;
   margin-bottom: 10px;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: bold;
   color: #2e7d32;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .tagline {
-  font-size: 1.2rem;
-  color: #4caf50;
-  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #388e3c;
+  margin: 10px 0 2.5rem;
+  line-height: 1.5;
 }
 
 .get-started-btn {
   font-size: 1.2rem;
-  margin-top: 1rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
 }

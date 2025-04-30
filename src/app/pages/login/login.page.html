@@ -12,8 +12,8 @@
 
   <ion-list>
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="email" type="email"></ion-input>
+      <ion-label position="floating">Username or Email</ion-label>
+      <ion-input [(ngModel)]="emailOrUsername" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -25,14 +25,9 @@
   <ion-item lines="none" class="options-row">
     <ion-checkbox slot="start" [(ngModel)]="rememberMe"></ion-checkbox>
     <ion-label>Remember me</ion-label>
-    <ion-button fill="clear" size="small" slot="end">Forgot password</ion-button>
   </ion-item>
 
-  <ion-button expand="block" color="success" (click)="login()">Sign in</ion-button>
-
-  <ion-button expand="block" color="light">
-    <img src="assets/google.png" alt="Google logo" width="20" /> Sign in with Google
-  </ion-button>
+  <ion-button expand="block" color="success" (click)="login()">Sign In</ion-button>
 
   <div class="ion-text-center">
     <p class="register-text">
