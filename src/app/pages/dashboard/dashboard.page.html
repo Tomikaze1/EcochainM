@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,29 +13,35 @@
     <h1>Eco Chain</h1>
   </div>
 
-  <div class="action-buttons ion-text-center">
-    <ion-button fill="clear" class="icon-btn" (click)="goTo('trip')">
-      <ion-icon name="location-outline"></ion-icon>
-      <div>Trip</div>
-    </ion-button>
-
+  <div class="action-buttons ion-padding">
     <ion-row class="icon-row">
-      <ion-col>
-        <ion-button fill="clear" class="icon-btn" (click)="goTo('fuel')">
-          <ion-icon name="flash-outline"></ion-icon>
-          <div>Fuel</div>
+      <ion-col size="6">
+        <ion-button expand="block" fill="solid" color="success" (click)="goTo('trip')">
+          <ion-icon name="location-outline" slot="start"></ion-icon>
+          Trip
         </ion-button>
       </ion-col>
-      <ion-col>
-        <ion-button fill="clear" class="icon-btn" (click)="goTo('vehicle')">
-          <ion-icon name="car-outline"></ion-icon>
-          <div>Vehicle</div>
+      <ion-col size="6">
+        <ion-button expand="block" fill="solid" color="tertiary" (click)="goTo('fuel')">
+          <ion-icon name="flash-outline" slot="start"></ion-icon>
+          Fuel
         </ion-button>
       </ion-col>
     </ion-row>
 
-    <ion-button expand="block" color="light" shape="round" (click)="goTo('summary')" class="custom-btn">
-      Customize
-    </ion-button>
+    <ion-row class="icon-row">
+      <ion-col size="6">
+        <ion-button expand="block" fill="solid" color="warning" (click)="goTo('vehicle')">
+          <ion-icon name="car-outline" slot="start"></ion-icon>
+          Vehicle
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" fill="solid" color="medium" (click)="goTo('customize')">
+          <ion-icon name="construct-outline" slot="start"></ion-icon>
+          Customize
+        </ion-button>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>

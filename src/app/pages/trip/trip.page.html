@@ -7,26 +7,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="trip-bg">
-  <ion-item class="dropdown">
-    <ion-icon name="location-outline" slot="start"></ion-icon>
-    <ion-label>Where to?</ion-label>
-  </ion-item>
+<ion-content class="trip-bg ion-padding">
+  <ion-card>
+    <ion-item lines="full">
+      <ion-icon name="location-outline" slot="start" color="primary"></ion-icon>
+      <ion-label>Where to?</ion-label>
+    </ion-item>
+  </ion-card>
 
   <ion-list class="destination-list">
     <ion-item button (click)="selectDestination('7VVX+H2R, Cebu City, 6000 Cebu\nUniversity of San Jose-Recoletos')">
       <ion-icon name="pin-outline" slot="start"></ion-icon>
-      <ion-label>7VVX+H2R, Cebu City, 6000 Cebu<br />University of San Jose-Recoletos</ion-label>
+      <ion-label>7VVX+H2R, Cebu City<br />University of San Jose-Recoletos</ion-label>
     </ion-item>
 
     <ion-item button (click)="selectDestination('7VQ6+XQR usjr, Cebu City, 6000 Cebu')">
       <ion-icon name="pin-outline" slot="start"></ion-icon>
-      <ion-label>7VQ6+XQR usjr, Cebu City, 6000 Cebu</ion-label>
+      <ion-label>7VQ6+XQR usjr, Cebu City</ion-label>
     </ion-item>
 
-    <ion-item button (click)="selectDestination('2nd Level Cyberzone, SM City Cebu, Juan Luna Ave Ext, Cebu City, 6000 Cebu')">
+    <ion-item button (click)="selectDestination('2nd Level Cyberzone, SM City Cebu, Juan Luna Ave Ext, Cebu City')">
       <ion-icon name="pin-outline" slot="start"></ion-icon>
-      <ion-label>2nd Level Cyberzone, SM City Cebu<br />Juan Luna Ave Ext, Cebu City</ion-label>
+      <ion-label>SM City Cebu, Juan Luna Ave Ext</ion-label>
     </ion-item>
   </ion-list>
 

@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="trip-summary-bg">
+<ion-content class="trip-summary-bg ion-padding">
   <div class="summary-container">
 
     <ion-card class="summary-card" *ngIf="trip?.destination">
@@ -41,7 +41,7 @@
       Start
     </ion-button>
 
-    <ion-text *ngIf="!isComplete" color="light">
+    <ion-text *ngIf="!isComplete" color="danger">
       <p class="ion-text-center">Please complete Trip, Fuel, and Vehicle selection.</p>
     </ion-text>
   </div>

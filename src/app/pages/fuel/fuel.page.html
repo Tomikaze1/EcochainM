@@ -7,58 +7,47 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="fuel-bg">
+<ion-content class="fuel-bg ion-padding">
   <div class="fuel-options">
     <ion-button
       expand="block"
-      fill="solid"
       shape="round"
       class="fuel-btn"
-      [color]="selectedFuel === 'Diesel' ? 'light' : 'white'"
+      [color]="selectedFuel === 'Diesel' ? 'success' : 'light'"
       (click)="selectFuel('Diesel')"
-    >
-      Diesel
-    </ion-button>
+    >Diesel</ion-button>
 
     <ion-button
       expand="block"
       shape="round"
       class="fuel-btn"
-      [color]="selectedFuel === 'Unleaded Gasoline' ? 'light' : 'white'"
+      [color]="selectedFuel === 'Unleaded Gasoline' ? 'success' : 'light'"
       (click)="selectFuel('Unleaded Gasoline')"
-    >
-      Unleaded Gasoline
-    </ion-button>
+    >Unleaded Gasoline</ion-button>
 
     <ion-button
       expand="block"
       shape="round"
       class="fuel-btn"
-      [color]="selectedFuel === 'LPG' ? 'light' : 'white'"
+      [color]="selectedFuel === 'LPG' ? 'success' : 'light'"
       (click)="selectFuel('LPG')"
-    >
-      LPG
-    </ion-button>
+    >LPG</ion-button>
 
     <ion-button
       expand="block"
       shape="round"
       class="fuel-btn"
-      [color]="selectedFuel === 'CNG' ? 'light' : 'white'"
+      [color]="selectedFuel === 'CNG' ? 'success' : 'light'"
       (click)="selectFuel('CNG')"
-    >
-      CNG
-    </ion-button>
+    >CNG</ion-button>
 
     <ion-button
       expand="block"
       shape="round"
       class="fuel-btn"
-      [color]="selectedFuel === 'Biodiesel' ? 'light' : 'white'"
+      [color]="selectedFuel === 'Biodiesel' ? 'success' : 'light'"
       (click)="selectFuel('Biodiesel')"
-    >
-      Biodiesel
-    </ion-button>
+    >Biodiesel</ion-button>
   </div>
 
   <ion-button expand="block" shape="round" color="success" (click)="confirmFuel()">Confirm</ion-button>

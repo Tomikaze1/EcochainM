@@ -1,12 +1,18 @@
-#map {
-    height: 60vh;
-    width: 100%;
-  }  
-  
-  .info-box {
-    background-color: #0a4022;
-    color: white;
-    border-radius: 10px;
-    margin: 16px;
-  }
-  
+.maps-bg {
+  background: #f0faf5;
+}
+
+.map-container {
+  height: 60vh;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-box {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
