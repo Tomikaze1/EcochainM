@@ -1,11 +1,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyD1-EXAMPLEKEY1234567",
-    authDomain: "ecochainmobile.firebaseapp.com",
-    projectId: "ecochainmobile",
-    storageBucket: "ecochainmobile.appspot.com",
-    messagingSenderId: "1234567890",
-    appId: "1:1234567890:web:abc123def456ghi789"
+    apiKey: "AIzaSyDIWcWXJpGbLb6sRy3f7DNuRIqAYGw7aVM",
+    authDomain: "ecochainm.firebaseapp.com",
+    projectId: "ecochainm",
+    storageBucket: "ecochainm.firebasestorage.app",
+    messagingSenderId: "439263490362",
+    appId: "1:439263490362:web:87aa92da10dea020bda003",
+    measurementId: "G-KKCQJB9X33"
   }
 };

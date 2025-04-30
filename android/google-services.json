@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "439263490362",
+    "project_id": "ecochainm",
+    "storage_bucket": "ecochainm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439263490362:android:a725a74cf847bcc9bda003",
+        "android_client_info": {
+          "package_name": "com.ecochainmobile.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdR8xINRWOQK_eyJpTz7kerd_WNDUkNms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
