@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Trip Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Trip Details</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Origin:</strong> {{ trip?.origin }}</p>
+      <p><strong>Destination:</strong> {{ trip?.destination }}</p>
+      <p><strong>Fuel Type:</strong> {{ fuel }}</p>
+      <p><strong>Vehicle Type:</strong> {{ vehicle }}</p>
+      <p><strong>Started At:</strong> {{ trip?.startedAt | date:'medium' }}</p>
+      <p><strong>Estimated Distance:</strong> {{ distanceKm | number:'1.2-2' }} km</p>
+      <p><strong>Estimated Emissions:</strong> {{ emissions }} g CO₂</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="success" (click)="finishTrip()">Finish Trip</ion-button>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Select Fuel Type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-radio-group [(ngModel)]="fuelType">
+      <ion-item>
+        <ion-label>Diesel</ion-label>
+        <ion-radio slot="start" value="Diesel"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gasoline</ion-label>
+        <ion-radio slot="start" value="Gasoline"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Electric</ion-label>
+        <ion-radio slot="start" value="Electric"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" (click)="saveFuel()">Confirm</ion-button>
+</ion-content>

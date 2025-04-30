@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Select Vehicle Type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-radio-group [(ngModel)]="vehicleType">
+      <ion-item>
+        <ion-label>Truck</ion-label>
+        <ion-radio slot="start" value="Truck"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Van</ion-label>
+        <ion-radio slot="start" value="Van"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hybrid</ion-label>
+        <ion-radio slot="start" value="Hybrid"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" (click)="saveVehicle()">Confirm</ion-button>
+</ion-content>

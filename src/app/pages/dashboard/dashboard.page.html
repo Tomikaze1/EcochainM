@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card button (click)="goTo('trip')">
+    <ion-card-header>
+      <ion-card-title>Start a Trip</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card button (click)="goTo('fuel')">
+    <ion-card-header>
+      <ion-card-title>Choose Fuel Type</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card button (click)="goTo('vehicle')">
+    <ion-card-header>
+      <ion-card-title>Select Vehicle Type</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
