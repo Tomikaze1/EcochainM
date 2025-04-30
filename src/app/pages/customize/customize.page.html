@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Trip Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="trip-summary-bg">
+  <div class="summary-container">
+
+    <ion-card class="summary-card" *ngIf="trip?.destination">
+      <ion-item lines="none">
+        <ion-icon name="navigate" slot="start" color="success"></ion-icon>
+        <ion-label>
+          {{ trip.destination }}
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card class="summary-card" *ngIf="fuel">
+      <ion-item lines="none">
+        <ion-icon name="flash" slot="start" color="success"></ion-icon>
+        <ion-label>
+          {{ fuel }}
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card class="summary-card" *ngIf="vehicle">
+      <ion-item lines="none">
+        <ion-icon name="car" slot="start" color="success"></ion-icon>
+        <ion-label>
+          {{ vehicle }}
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-button expand="block" shape="round" color="success" (click)="startTrip()" [disabled]="!isComplete">
+      Start
+    </ion-button>
+
+    <ion-text *ngIf="!isComplete" color="light">
+      <p class="ion-text-center">Please complete Trip, Fuel, and Vehicle selection.</p>
+    </ion-text>
+  </div>
+</ion-content>

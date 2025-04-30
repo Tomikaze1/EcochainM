@@ -1,20 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding ion-text-center">
+  <div class="logo">
+    <img src="assets/logo.png" alt="EcoChain Logo" class="logo-img">
+    <h1>EcoChain</h1>
+    <p class="tagline">Drive Smart,<br>Drive Green.</p>
   </div>
+
+  <ion-button expand="block" color="success" size="large" (click)="goToLogin()" class="get-started-btn">
+    Get Started
+  </ion-button>
 </ion-content>

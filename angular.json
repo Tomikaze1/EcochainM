@@ -31,7 +31,11 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",      
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -65,7 +69,7 @@
               "namedChunks": true
             },
             "ci": {
-              "progress": false
+              "watch": false      
             }
           },
           "defaultConfiguration": "production"
@@ -78,9 +82,6 @@
             },
             "development": {
               "buildTarget": "app:build:development"
-            },
-            "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "development"
@@ -111,13 +112,16 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
             "scripts": []
           },
           "configurations": {
             "ci": {
-              "progress": false,
-              "watch": false
+              "watch": false      
             }
           }
         },

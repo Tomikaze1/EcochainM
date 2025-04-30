@@ -1,13 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Registration</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <div class="icon-wrapper ion-text-center">
+    <ion-icon name="person-circle-outline" size="large"></ion-icon>
+    <h2>Registration</h2>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Full Name</ion-label>
+      <ion-input [(ngModel)]="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input [(ngModel)]="phone" type="tel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="password" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input [(ngModel)]="confirmPassword" type="password" required></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="success" (click)="register()">Register</ion-button>
+  <ion-button expand="block" fill="outline" (click)="goToLogin()">Have account? Sign In</ion-button>
+
+  <div class="social-signin-wrapper ion-text-center">
+    <p>Or sign up with</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" expand="block">
+            <img src="assets/google.png" width="20" alt="Google Logo" /> Google
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" expand="block">
+            <img src="assets/facebook.png" width="20" alt="Facebook Logo" /> Facebook
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
 </ion-content>

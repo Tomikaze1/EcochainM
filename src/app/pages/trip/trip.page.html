@@ -1,19 +1,34 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Trip Setup</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Trip</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-item>
-    <ion-label position="floating">Origin (auto-detected)</ion-label>
-    <ion-input [value]="origin" readonly></ion-input>
+<ion-content class="trip-bg">
+  <ion-item class="dropdown">
+    <ion-icon name="location-outline" slot="start"></ion-icon>
+    <ion-label>Where to?</ion-label>
   </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Destination</ion-label>
-    <ion-input [(ngModel)]="destination"></ion-input>
-  </ion-item>
+  <ion-list class="destination-list">
+    <ion-item button (click)="selectDestination('7VVX+H2R, Cebu City, 6000 Cebu\nUniversity of San Jose-Recoletos')">
+      <ion-icon name="pin-outline" slot="start"></ion-icon>
+      <ion-label>7VVX+H2R, Cebu City, 6000 Cebu<br />University of San Jose-Recoletos</ion-label>
+    </ion-item>
 
-  <ion-button expand="full" (click)="startTrip()">Start Trip</ion-button>
+    <ion-item button (click)="selectDestination('7VQ6+XQR usjr, Cebu City, 6000 Cebu')">
+      <ion-icon name="pin-outline" slot="start"></ion-icon>
+      <ion-label>7VQ6+XQR usjr, Cebu City, 6000 Cebu</ion-label>
+    </ion-item>
+
+    <ion-item button (click)="selectDestination('2nd Level Cyberzone, SM City Cebu, Juan Luna Ave Ext, Cebu City, 6000 Cebu')">
+      <ion-icon name="pin-outline" slot="start"></ion-icon>
+      <ion-label>2nd Level Cyberzone, SM City Cebu<br />Juan Luna Ave Ext, Cebu City</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" shape="round" color="success" (click)="confirmTrip()">Confirm</ion-button>
 </ion-content>

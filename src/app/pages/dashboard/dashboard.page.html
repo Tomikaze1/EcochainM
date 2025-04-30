@@ -1,27 +1,38 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="dashboard-bg">
+  <div class="logo-section ion-text-center">
+    <img src="assets/logo.png" alt="EcoChain Logo" class="logo-img" />
+    <h1>Eco Chain</h1>
+  </div>
 
-  <ion-card button (click)="goTo('trip')">
-    <ion-card-header>
-      <ion-card-title>Start a Trip</ion-card-title>
-    </ion-card-header>
-  </ion-card>
+  <div class="action-buttons ion-text-center">
+    <ion-button fill="clear" class="icon-btn" (click)="goTo('trip')">
+      <ion-icon name="location-outline"></ion-icon>
+      <div>Trip</div>
+    </ion-button>
 
-  <ion-card button (click)="goTo('fuel')">
-    <ion-card-header>
-      <ion-card-title>Choose Fuel Type</ion-card-title>
-    </ion-card-header>
-  </ion-card>
+    <ion-row class="icon-row">
+      <ion-col>
+        <ion-button fill="clear" class="icon-btn" (click)="goTo('fuel')">
+          <ion-icon name="flash-outline"></ion-icon>
+          <div>Fuel</div>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" class="icon-btn" (click)="goTo('vehicle')">
+          <ion-icon name="car-outline"></ion-icon>
+          <div>Vehicle</div>
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
-  <ion-card button (click)="goTo('vehicle')">
-    <ion-card-header>
-      <ion-card-title>Select Vehicle Type</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
+    <ion-button expand="block" color="light" shape="round" (click)="goTo('summary')" class="custom-btn">
+      Customize
+    </ion-button>
+  </div>
 </ion-content>

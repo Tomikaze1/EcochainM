@@ -5,19 +5,24 @@ import { Router } from '@angular/router';
   selector: 'app-vehicle',
   templateUrl: './vehicle.page.html',
   styleUrls: ['./vehicle.page.scss'],
-  standalone:false,
+  standalone: false,
 })
 export class VehiclePage {
-  vehicleType = '';
+  selectedVehicle: string = '';
 
   constructor(private router: Router) {}
 
-  saveVehicle() {
-    if (!this.vehicleType) {
+  selectVehicle(vehicle: string) {
+    this.selectedVehicle = vehicle;
+  }
+
+  confirmVehicle() {
+    if (!this.selectedVehicle) {
       alert('Please select a vehicle type.');
       return;
     }
-    localStorage.setItem('vehicle', this.vehicleType);
+
+    localStorage.setItem('vehicle', this.selectedVehicle);
     this.router.navigate(['/dashboard']);
   }
 }

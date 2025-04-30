@@ -1,26 +1,62 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Select Vehicle Type</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vehicles</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-radio-group [(ngModel)]="vehicleType">
-      <ion-item>
-        <ion-label>Truck</ion-label>
-        <ion-radio slot="start" value="Truck"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Van</ion-label>
-        <ion-radio slot="start" value="Van"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Hybrid</ion-label>
-        <ion-radio slot="start" value="Hybrid"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
+<ion-content class="vehicle-bg">
+  <div class="vehicle-options">
+    <ion-button
+      expand="block"
+      shape="round"
+      class="vehicle-btn"
+      [color]="selectedVehicle === 'Van' ? 'light' : 'white'"
+      (click)="selectVehicle('Van')"
+    >Van</ion-button>
 
-  <ion-button expand="full" (click)="saveVehicle()">Confirm</ion-button>
+    <ion-button
+      expand="block"
+      shape="round"
+      class="vehicle-btn"
+      [color]="selectedVehicle === 'Refrigerated Van' ? 'light' : 'white'"
+      (click)="selectVehicle('Refrigerated Van')"
+    >Refrigerated Van</ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="vehicle-btn"
+      [color]="selectedVehicle === 'Motorcycle' ? 'light' : 'white'"
+      (click)="selectVehicle('Motorcycle')"
+    >Motorcycle</ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="vehicle-btn"
+      [color]="selectedVehicle === 'Pickup' ? 'light' : 'white'"
+      (click)="selectVehicle('Pickup')"
+    >Pickup</ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="vehicle-btn"
+      [color]="selectedVehicle === 'Scooter' ? 'light' : 'white'"
+      (click)="selectVehicle('Scooter')"
+    >Scooter</ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="vehicle-btn"
+      [color]="selectedVehicle === 'Truck' ? 'light' : 'white'"
+      (click)="selectVehicle('Truck')"
+    >Truck</ion-button>
+  </div>
+
+  <ion-button expand="block" shape="round" color="success" (click)="confirmVehicle()">Confirm</ion-button>
 </ion-content>

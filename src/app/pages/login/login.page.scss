@@ -1,0 +1,29 @@
+.logo-container {
+    margin-top: 40px;
+  
+    img {
+      margin-bottom: 10px;
+    }
+  
+    .eco-text {
+      font-weight: bold;
+    }
+  }
+  
+  .options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .register-text {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  a {
+    color: #d61f1f;
+    font-weight: 500;
+  }
+  

@@ -1,0 +1,23 @@
+.fuel-bg {
+    --background: #0a4022;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  .fuel-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .fuel-btn {
+    --border-radius: 12px;
+    --background: white;
+    color: black;
+    font-weight: 500;
+  }
+  

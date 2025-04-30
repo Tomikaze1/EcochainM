@@ -1,0 +1,22 @@
+.vehicle-bg {
+    --background: #0a4022;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vehicle-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .vehicle-btn {
+    --border-radius: 12px;
+    --background: white;
+    color: black;
+    font-weight: 500;
+  }
+  

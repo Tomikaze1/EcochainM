@@ -1,26 +1,65 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Select Fuel Type</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Fuel</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-radio-group [(ngModel)]="fuelType">
-      <ion-item>
-        <ion-label>Diesel</ion-label>
-        <ion-radio slot="start" value="Diesel"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Gasoline</ion-label>
-        <ion-radio slot="start" value="Gasoline"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Electric</ion-label>
-        <ion-radio slot="start" value="Electric"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
+<ion-content class="fuel-bg">
+  <div class="fuel-options">
+    <ion-button
+      expand="block"
+      fill="solid"
+      shape="round"
+      class="fuel-btn"
+      [color]="selectedFuel === 'Diesel' ? 'light' : 'white'"
+      (click)="selectFuel('Diesel')"
+    >
+      Diesel
+    </ion-button>
 
-  <ion-button expand="full" (click)="saveFuel()">Confirm</ion-button>
+    <ion-button
+      expand="block"
+      shape="round"
+      class="fuel-btn"
+      [color]="selectedFuel === 'Unleaded Gasoline' ? 'light' : 'white'"
+      (click)="selectFuel('Unleaded Gasoline')"
+    >
+      Unleaded Gasoline
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="fuel-btn"
+      [color]="selectedFuel === 'LPG' ? 'light' : 'white'"
+      (click)="selectFuel('LPG')"
+    >
+      LPG
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="fuel-btn"
+      [color]="selectedFuel === 'CNG' ? 'light' : 'white'"
+      (click)="selectFuel('CNG')"
+    >
+      CNG
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="fuel-btn"
+      [color]="selectedFuel === 'Biodiesel' ? 'light' : 'white'"
+      (click)="selectFuel('Biodiesel')"
+    >
+      Biodiesel
+    </ion-button>
+  </div>
+
+  <ion-button expand="block" shape="round" color="success" (click)="confirmFuel()">Confirm</ion-button>
 </ion-content>

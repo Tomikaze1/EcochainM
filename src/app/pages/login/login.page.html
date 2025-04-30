@@ -1,13 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="logo-container ion-text-center">
+    <img src="assets/logo.png" alt="EcoChain Logo" width="120" />
+    <h2 class="eco-text">EcoChain</h2>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-item lines="none" class="options-row">
+    <ion-checkbox slot="start" [(ngModel)]="rememberMe"></ion-checkbox>
+    <ion-label>Remember me</ion-label>
+    <ion-button fill="clear" size="small" slot="end">Forgot password</ion-button>
+  </ion-item>
+
+  <ion-button expand="block" color="success" (click)="login()">Sign in</ion-button>
+
+  <ion-button expand="block" color="light">
+    <img src="assets/google.png" alt="Google logo" width="20" /> Sign in with Google
+  </ion-button>
+
+  <div class="ion-text-center">
+    <p class="register-text">
+      Don’t have an account?
+      <a (click)="goToRegister()">Sign up for free!</a>
+    </p>
+  </div>
 </ion-content>

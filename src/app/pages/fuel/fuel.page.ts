@@ -5,19 +5,24 @@ import { Router } from '@angular/router';
   selector: 'app-fuel',
   templateUrl: './fuel.page.html',
   styleUrls: ['./fuel.page.scss'],
-  standalone:false,
+  standalone: false,
 })
 export class FuelPage {
-  fuelType = '';
+  selectedFuel: string = '';
 
   constructor(private router: Router) {}
 
-  saveFuel() {
-    if (!this.fuelType) {
+  selectFuel(fuel: string) {
+    this.selectedFuel = fuel;
+  }
+
+  confirmFuel() {
+    if (!this.selectedFuel) {
       alert('Please select a fuel type.');
       return;
     }
-    localStorage.setItem('fuel', this.fuelType);
+
+    localStorage.setItem('fuel', this.selectedFuel);
     this.router.navigate(['/dashboard']);
   }
 }

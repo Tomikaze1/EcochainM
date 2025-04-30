@@ -1,25 +1,38 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
     <ion-title>Trip Summary</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Trip Details</ion-card-title>
-    </ion-card-header>
+<ion-content class="summary-bg">
+  <div class="summary-container">
 
-    <ion-card-content>
-      <p><strong>Origin:</strong> {{ trip?.origin }}</p>
-      <p><strong>Destination:</strong> {{ trip?.destination }}</p>
-      <p><strong>Fuel Type:</strong> {{ fuel }}</p>
-      <p><strong>Vehicle Type:</strong> {{ vehicle }}</p>
-      <p><strong>Started At:</strong> {{ trip?.startedAt | date:'medium' }}</p>
-      <p><strong>Estimated Distance:</strong> {{ distanceKm | number:'1.2-2' }} km</p>
-      <p><strong>Estimated Emissions:</strong> {{ emissions }} g CO₂</p>
-    </ion-card-content>
-  </ion-card>
+    <h2 class="ion-text-center">Trip Summary</h2>
+    <p><strong>Details:</strong></p>
 
-  <ion-button expand="full" color="success" (click)="finishTrip()">Finish Trip</ion-button>
+    <ion-card class="summary-card">
+      <ion-card-content>
+        <p>{{ summary.date }}</p>
+        <ion-item lines="full">
+          <ion-label>Vehicle:</ion-label>
+          <ion-text>{{ summary.vehicle }}</ion-text>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label>Consumed Fuel:</ion-label>
+          <ion-text>{{ summary.fuel }} L</ion-text>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>Distance:</ion-label>
+          <ion-text>{{ summary.distance }} km</ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" shape="round" color="success" (click)="goHome()">Done</ion-button>
+  </div>
 </ion-content>

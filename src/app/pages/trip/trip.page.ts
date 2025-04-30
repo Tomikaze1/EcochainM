@@ -1,38 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { Geolocation } from '@capacitor/geolocation';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-trip',
   templateUrl: './trip.page.html',
   styleUrls: ['./trip.page.scss'],
-  standalone:false,
+  standalone: false,
 })
-export class TripPage implements OnInit {
-  origin: string = '';
-  destination: string = '';
+export class TripPage {
+  selectedDestination: string = '';
 
   constructor(private router: Router) {}
 
-  async ngOnInit() {
-    const coords = await Geolocation.getCurrentPosition();
-    this.origin = `Lat: ${coords.coords.latitude}, Lng: ${coords.coords.longitude}`;
-  }
-
-  startTrip() {
-    if (!this.destination.trim()) {
-      alert('Please enter a destination.');
+  async confirmTrip() {
+    if (!this.selectedDestination) {
+      alert('Please select a destination.');
       return;
     }
 
-    // Save trip info to service/localStorage (can upgrade later to Firebase)
+    const coords = await Geolocation.getCurrentPosition();
+
     localStorage.setItem('trip', JSON.stringify({
-      origin: this.origin,
-      destination: this.destination,
+      origin: `Lat: ${coords.coords.latitude}, Lng: ${coords.coords.longitude}`,
+      originLat: coords.coords.latitude,
+      originLng: coords.coords.longitude,
+      destination: this.selectedDestination,
       startedAt: new Date().toISOString()
     }));
 
-    // Navigate to map or summary
     this.router.navigate(['/maps']);
+  }
+
+  selectDestination(dest: string) {
+    this.selectedDestination = dest;
   }
 }

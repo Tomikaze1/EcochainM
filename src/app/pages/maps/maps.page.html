@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Live Map</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Maps</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div id="map" style="height: 100vh;"></div>
+  <div id="map"></div>
+
+  <div class="info-box ion-padding">
+    <ion-label color="dark">
+      <ion-icon name="location-outline" color="primary"></ion-icon>
+      <strong>Point A:</strong><br />
+      {{ trip?.origin || 'Not set' }}
+    </ion-label>
+
+    <ion-label color="dark">
+      <ion-icon name="location" color="danger"></ion-icon>
+      <strong>Point B:</strong><br />
+      {{ trip?.destination || 'Not set' }}
+    </ion-label>
+
+    <ion-button expand="block" shape="round" color="success" (click)="arrived()">Arrived</ion-button>
+  </div>
 </ion-content>
