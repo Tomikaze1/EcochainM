@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-fuel',
   templateUrl: './fuel.page.html',
   styleUrls: ['./fuel.page.scss'],
+  standalone:false,
 })
 export class FuelPage {
   fuelType = '';

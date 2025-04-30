@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-trip',
   templateUrl: './trip.page.html',
   styleUrls: ['./trip.page.scss'],
+  standalone:false,
 })
 export class TripPage implements OnInit {
   origin: string = '';

@@ -5,6 +5,7 @@ import { TripService } from 'src/app/services/trip.service';
   selector: 'app-summary',
   templateUrl: './summary.page.html',
   styleUrls: ['./summary.page.scss'],
+  standalone:false,
 })
 export class SummaryPage implements OnInit {
   trip: any;

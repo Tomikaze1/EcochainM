@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-vehicle',
   templateUrl: './vehicle.page.html',
   styleUrls: ['./vehicle.page.scss'],
+  standalone:false,
 })
 export class VehiclePage {
   vehicleType = '';

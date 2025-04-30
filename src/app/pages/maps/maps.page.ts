@@ -6,6 +6,7 @@ import { Geolocation } from '@capacitor/geolocation';
   selector: 'app-maps',
   templateUrl: './maps.page.html',
   styleUrls: ['./maps.page.scss'],
+  standalone:false,
 })
 export class MapsPage implements OnInit, OnDestroy {
   map!: L.Map;
